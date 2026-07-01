@@ -1,6 +1,7 @@
 server-port: 8080
 tls-port: 8443
 json-tls-port: 8081
+h2c-port: 8082
 tls-cert: /certs/server.crt
 tls-key: /certs/server.key
 

@@ -35,6 +35,9 @@ components_manager:
                       tls:
                           cert: $tls-cert
                           private-key: $tls-key
+# H2C/Prior-knowledge is not supported yet - userver lacks per-port
+# connection config, and http-version: '2' always allows HTTP/1.1 fallback
+#                   - port: $h2c-port
                 task_processor: main-task-processor
                 handler-defaults:
                     set_tracing_headers: false
