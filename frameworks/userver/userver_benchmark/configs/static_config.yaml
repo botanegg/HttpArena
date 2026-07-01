@@ -23,17 +23,18 @@ components_manager:
     components:                         # Configuring components that were registered via component_list
         server:
             listener:
+                connection:
+                    http-version: '2'
                 ports:
                     - port: $server-port
                     - port: $json-tls-port
                       tls:
                           cert: $tls-cert
                           private-key: $tls-key
-# PORTS  for http2 and tls benchmarks
-#                    - port: $tls-port
-#                      tls:
-#                          cert: $tls-cert
-#                          private-key: $tls-key
+                    - port: $tls-port
+                      tls:
+                          cert: $tls-cert
+                          private-key: $tls-key
                 task_processor: main-task-processor
                 handler-defaults:
                     set_tracing_headers: false
